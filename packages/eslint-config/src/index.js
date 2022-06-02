@@ -1,16 +1,29 @@
 module.exports = {
+  parserOptions: {
+    ecmaVersion: 2022,
+    ecmaFeatures: {
+      jsx: true,
+    },
+    sourceType: "module",
+  },
   env: {
     node: true,
     browser: true,
     es6: true,
   },
+  reportUnusedDisableDirectives: true,
   extends: [
     "plugin:import/recommended",
     "plugin:eslint-comments/recommended",
     "plugin:jsonc/recommended-with-jsonc",
     "plugin:markdown/recommended",
   ],
-  plugins: ["unicorn"],
+  plugins: ["unicorn", "n"],
+  globals: {
+    document: "readonly",
+    navigator: "readonly",
+    window: "readonly",
+  },
   settings: {
     "import/resolver": {
       node: { extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"] },
