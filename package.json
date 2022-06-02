@@ -1,6 +1,6 @@
 {
   "name": "@deprecatedluxas/shared-eslint-config",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "private": true,
   "description": "My shareable ESLint config",
   "author": "Lucas Norgaard <lucasnrgaard@gmail.com>",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "bump": "npm version patch",
+    "bump": "tsx scripts/bump.ts",
     "release": "tsx scripts/release.ts"
   },
   "devDependencies": {
