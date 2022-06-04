@@ -16,13 +16,12 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "bump": "tsx scripts/bump.ts",
-    "release": "tsx scripts/release.ts"
+    "release": "bumpp package.json packages/*/package.json --commit --push --tag"
   },
   "devDependencies": {
     "@deprecatedluxas/eslint-config": "*",
+    "bumpp": "^7.1.1",
     "eslint": "^8.16.0",
-    "tsx": "^3.4.2",
     "typescript": "^4.7.2"
   }
 }
