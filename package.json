@@ -1,6 +1,6 @@
 {
   "name": "@deprecatedluxas/shared-eslint-config",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "description": "My shareable ESLint config",
   "author": "Lucas Norgaard <lucasnrgaard@gmail.com>",
