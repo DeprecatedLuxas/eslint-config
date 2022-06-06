@@ -7,7 +7,7 @@ module.exports = {
     "import/no-absolute-path": "off",
     semi: ["warn", "always"],
     quotes: ["error", "double"],
-    "quote-props": ["error", "consistent-as-needed"],
+    "quote-props": ["warn", "as-needed"],
     "no-unused-vars": "warn",
     "no-param-reassign": "off",
     "array-bracket-spacing": ["error", "never"],

@@ -158,5 +158,6 @@ module.exports = {
   rules: {
     "eol-last": "off",
     "no-trailing-spaces": "off",
+    "padded-blocks": "off",
   },
 };

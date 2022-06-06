@@ -18,10 +18,7 @@ module.exports = {
       "error",
       { "ts-ignore": "allow-with-description" },
     ],
-    "@typescript-eslint/member-delimiter-style": [
-      "error",
-      { multiline: { delimiter: "none" } },
-    ],
+    "@typescript-eslint/member-delimiter-style": "warn",
     "@typescript-eslint/type-annotation-spacing": ["error", {}],
     "@typescript-eslint/consistent-type-imports": [
       "error",
@@ -71,7 +68,7 @@ module.exports = {
       },
     ],
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+    "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     "no-redeclare": "off",
     "@typescript-eslint/no-redeclare": "error",
     "no-use-before-define": "off",
