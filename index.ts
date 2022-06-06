@@ -5,3 +5,8 @@ class TestClass {
     this.test = test;
   }
 }
+
+enum TestEnum {
+  Test = "test",
+  Test2 = "test2",
+}

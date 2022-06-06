@@ -16,7 +16,7 @@ module.exports = {
     camelcase: "off",
     "comma-spacing": ["error", { before: false, after: true }],
     "comma-style": ["error", "last"],
-    "comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": ["error", "only-multiline"],
     "no-constant-condition": "warn",
     "no-debugger": "error",
     "no-console": ["error", { allow: ["warn", "error"] }],
@@ -44,7 +44,8 @@ module.exports = {
         asyncArrow: "always",
       },
     ],
-    "no-multiple-empty-lines": ["error", { max: 1, maxBOF: 0, maxEOF: 1 }],
+    // "no-multiple-empty-lines": ["warn", { max: 1, maxBOF: 0, maxEOF: 0 }],
+    "no-multiple-empty-lines": "off",
     "no-var": "error",
     "prefer-const": [
       "error",

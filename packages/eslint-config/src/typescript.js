@@ -83,7 +83,7 @@ module.exports = {
       { allowSingleLine: true },
     ],
     "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+    "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
     "object-curly-spacing": "off",
     "@typescript-eslint/object-curly-spacing": ["error", "always"],
     semi: "off",

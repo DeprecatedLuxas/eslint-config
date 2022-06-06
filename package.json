@@ -5,15 +5,15 @@
   "description": "My shareable ESLint config",
   "author": "Lucas Norgaard <lucasnrgaard@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deprecatedluxas/eslint-config.git"
+  },
   "keywords": [
     "eslint-config",
     "eslint",
     "config"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/deprecatedluxas/eslint-config.git"
-  },
   "scripts": {
     "lint": "eslint .",
     "bump": "bumpp package.json packages/*/package.json --commit --push --tag",
