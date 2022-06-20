@@ -1,6 +1,6 @@
 {
   "name": "@luxass/shared-eslint-config",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Luxass' ESLint config monorepo",
   "author": "Lucas Norgaard <lucasnrgaard@gmail.com>",
