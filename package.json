@@ -1,9 +1,12 @@
 {
-  "name": "@luxass/shared-eslint-config",
+  "name": "@luxass/eslint-config",
   "version": "1.0.0",
-  "private": true,
-  "description": "Luxass' ESLint config monorepo",
-  "author": "Lucas Norgaard <lucasnrgaard@gmail.com>",
+  "description": "Luxass' ESLint config",
+  "author": {
+    "name": "Lucas Norgaard",
+    "email": "lucasnrgaard@gmail.com",
+    "url": "https://luxass.dev"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -15,13 +18,33 @@
     "config",
     "eslintconfig"
   ],
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "lint": "eslint .",
     "bump": "bumpp package.json packages/*/package.json --commit --push --tag",
     "release": "pnpm -r publish --access public"
   },
+  "peerDependencies": {
+    "eslint": "^8.16.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsonc": "^2.3.0",
+    "eslint-plugin-markdown": "^2.2.1",
+    "eslint-plugin-n": "^15.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-unicorn": "^42.0.0",
+    "jsonc-eslint-parser": "^2.1.0"
+  },
   "devDependencies": {
-    "@luxass/eslint-config": "*",
     "bumpp": "^7.1.1",
     "eslint": "^8.16.0",
     "typescript": "^4.7.2"
