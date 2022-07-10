@@ -89,7 +89,7 @@ module.exports = {
     semi: "off",
     "@typescript-eslint/semi": ["warn", "always"],
     quotes: "off",
-    "@typescript-eslint/quotes": ["warn", "double"],
+    "@typescript-eslint/quotes": ["warn", "semi"],
     "space-before-blocks": "off",
     "@typescript-eslint/space-before-blocks": ["error", "always"],
     "space-before-function-paren": "off",
@@ -141,7 +141,7 @@ module.exports = {
     "@typescript-eslint/triple-slash-reference": "off",
 
     // REACT
-    "jsx-quotes": ["error", "prefer-double"],
+    "jsx-quotes": ["warn", "prefer-double"],
     "react/react-in-jsx-scope": "off",
   },
 };
