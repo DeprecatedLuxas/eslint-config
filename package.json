@@ -45,8 +45,10 @@
     "jsonc-eslint-parser": "^2.1.0"
   },
   "devDependencies": {
+    "@luxass/prettier-config": "^1.0.4",
     "bumpp": "^7.1.1",
     "eslint": "^8.16.0",
+    "prettier": "^2.7.1",
     "typescript": "^4.7.2"
   }
 }
