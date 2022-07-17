@@ -18,10 +18,11 @@ module.exports = {
     '*.min.*',
     'CHANGELOG.md',
     'dist',
+    'build',
     'LICENSE*',
     'coverage',
     'public',
-    'packages-lock.json',
+    'package-lock.json',
     'pnpm-lock.yaml',
     'yarn.lock'
   ],
