@@ -11,6 +11,7 @@ module.exports = {
     'plugin:eslint-comments/recommended',
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:markdown/recommended',
+    'plugin:yml/standard',
     './javascript',
     './typescript'
   ],
@@ -24,7 +25,9 @@ module.exports = {
     'public',
     'package-lock.json',
     'pnpm-lock.yaml',
-    'yarn.lock'
+    'yarn.lock',
+    '!.github',
+    '!.vscode'
   ],
   plugins: ['unicorn'],
   settings: {
@@ -46,6 +49,13 @@ module.exports = {
         'jsonc/object-curly-newline': ['error', { multiline: true, consistent: true }],
         'jsonc/object-curly-spacing': ['error', 'always'],
         'jsonc/object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }]
+      }
+    },
+    {
+      files: ['*.yaml', '*.yml'],
+      parser: 'yaml-eslint-parser',
+      rules: {
+        'spaced-comment': 'off'
       }
     },
     {
@@ -150,6 +160,8 @@ module.exports = {
   rules: {
     'eol-last': 'off',
     'no-trailing-spaces': 'off',
-    'padded-blocks': 'off'
+    'padded-blocks': 'off',
+    'yml/quotes': ['error', { prefer: 'single', avoidEscape: false }],
+    'yml/no-empty-document': 'off'
   }
 };
