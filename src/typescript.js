@@ -19,10 +19,8 @@ module.exports = {
     '@typescript-eslint/type-annotation-spacing': ['error', {}],
     '@typescript-eslint/consistent-type-imports': [
       'warn',
-      { prefer: 'no-type-imports', disallowTypeAnnotations: false }
+      { prefer: 'prefer', disallowTypeAnnotations: false }
     ],
-    '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-    '@typescript-eslint/prefer-ts-expect-error': 'error',
     'no-useless-constructor': 'off',
     indent: 'off',
     '@typescript-eslint/indent': [
