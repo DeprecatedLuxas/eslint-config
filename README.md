@@ -1,3 +1,16 @@
-# eslint-config
+# @luxass/eslint-config
 
-My shareable ESLint config
+## Installation
+
+```bash
+pnpm add -D eslint @luxass/eslint-config
+```
+
+## Usage
+
+`.eslintrc`
+```json
+{
+  "extends": "@luxass"
+}
+```
