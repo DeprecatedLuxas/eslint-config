@@ -17,7 +17,10 @@ module.exports = {
     "@typescript-eslint/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }],
     "@typescript-eslint/member-delimiter-style": "warn",
     "@typescript-eslint/type-annotation-spacing": ["error", {}],
-    "@typescript-eslint/consistent-type-imports": "warn",
+    "@typescript-eslint/consistent-type-imports": ["warn", {
+      prefer: "type-imports",
+      disallowTypeAnnotations: false
+    }],
     "no-useless-constructor": "off",
     indent: "off",
     "@typescript-eslint/indent": [

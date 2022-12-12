@@ -6,162 +6,175 @@ module.exports = {
   },
   reportUnusedDisableDirectives: true,
   extends: [
-    'eslint-config-standard',
-    'plugin:import/recommended',
-    'plugin:eslint-comments/recommended',
-    'plugin:jsonc/recommended-with-jsonc',
-    'plugin:markdown/recommended',
-    'plugin:yml/standard',
-    './javascript',
-    './typescript'
+    "eslint-config-standard",
+    "plugin:import/recommended",
+    "plugin:eslint-comments/recommended",
+    "plugin:jsonc/recommended-with-jsonc",
+    "plugin:markdown/recommended",
+    "plugin:yml/standard",
+    "plugin:astro/recommended",
+    "./javascript",
+    "./typescript"
   ],
   ignorePatterns: [
-    '*.min.*',
-    'CHANGELOG.md',
-    'dist',
-    'build',
-    'LICENSE*',
-    'coverage',
-    'public',
-    'package-lock.json',
-    'pnpm-lock.yaml',
-    'yarn.lock',
-    '!.github',
-    '!.vscode'
+    "*.min.*",
+    "CHANGELOG.md",
+    "dist",
+    "build",
+    "LICENSE*",
+    "coverage",
+    "public",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock",
+    "!.github",
+    "!.vscode"
   ],
-  plugins: ['unicorn'],
+  plugins: ["unicorn"],
   settings: {
-    'import/resolver': {
-      node: { extensions: ['.js', '.mjs'] }
+    "import/resolver": {
+      node: { extensions: [".js", ".mjs"] }
     }
   },
   overrides: [
     {
-      files: ['*.json', '*.json5'],
-      parser: 'jsonc-eslint-parser',
+      files: ["*.json", "*.json5"],
+      parser: "jsonc-eslint-parser",
       rules: {
-        'jsonc/array-bracket-spacing': ['error', 'never'],
-        'jsonc/comma-dangle': ['error', 'never'],
-        'jsonc/comma-style': ['error', 'last'],
-        'jsonc/indent': ['error', 2],
-        'jsonc/key-spacing': ['error', { beforeColon: false, afterColon: true }],
-        'jsonc/no-octal-escape': 'error',
-        'jsonc/object-curly-newline': ['error', { multiline: true, consistent: true }],
-        'jsonc/object-curly-spacing': ['error', 'always'],
-        'jsonc/object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }]
+        "jsonc/array-bracket-spacing": ["error", "never"],
+        "jsonc/comma-dangle": ["error", "never"],
+        "jsonc/comma-style": ["error", "last"],
+        "jsonc/indent": ["error", 2],
+        "jsonc/key-spacing": ["error", { beforeColon: false, afterColon: true }],
+        "jsonc/no-octal-escape": "error",
+        "jsonc/object-curly-newline": ["error", { multiline: true, consistent: true }],
+        "jsonc/object-curly-spacing": ["error", "always"],
+        "jsonc/object-property-newline": ["error", { allowMultiplePropertiesPerLine: true }]
       }
     },
     {
-      files: ['*.yaml', '*.yml'],
-      parser: 'yaml-eslint-parser',
+      files: ["*.yaml", "*.yml"],
+      parser: "yaml-eslint-parser",
       rules: {
-        'spaced-comment': 'off'
+        "spaced-comment": "off"
       }
     },
     {
-      files: ['package.json'],
-      parser: 'jsonc-eslint-parser',
+      files: ["package.json"],
+      parser: "jsonc-eslint-parser",
       rules: {
-        'jsonc/sort-keys': [
-          'error',
+        "jsonc/sort-keys": [
+          "error",
           {
-            pathPattern: '^$',
+            pathPattern: "^$",
             order: [
-              'name',
-              'publisher',
-              'displayName',
-              'version',
-              'private',
-              'type',
-              'packageManager',
-              'description',
-              'author',
-              'license',
-              'funding',
-              'homepage',
-              'repository',
-              'bugs',
-              'keywords',
-              'categories',
-              'sideEffects',
-              'exports',
-              'main',
-              'module',
-              'types',
-              'typesVersions',
-              'bin',
-              'icon',
-              'files',
-              'engines',
-              'activationEvents',
-              'contributes',
-              'scripts',
-              'peerDependencies',
-              'peerDependenciesMeta',
-              'dependencies',
-              'optionalDependencies',
-              'devDependencies',
-              'pnpm'
+              "name",
+              "publisher",
+              "displayName",
+              "version",
+              "private",
+              "type",
+              "packageManager",
+              "description",
+              "author",
+              "license",
+              "funding",
+              "homepage",
+              "repository",
+              "bugs",
+              "keywords",
+              "categories",
+              "sideEffects",
+              "exports",
+              "main",
+              "module",
+              "types",
+              "typesVersions",
+              "bin",
+              "icon",
+              "files",
+              "engines",
+              "activationEvents",
+              "contributes",
+              "scripts",
+              "peerDependencies",
+              "peerDependenciesMeta",
+              "dependencies",
+              "optionalDependencies",
+              "devDependencies",
+              "pnpm"
             ]
           },
           {
-            pathPattern: '^(?:dev|peer|optional|bundled)?[Dd]ependencies$',
-            order: { type: 'asc' }
+            pathPattern: "^(?:dev|peer|optional|bundled)?[Dd]ependencies$",
+            order: { type: "asc" }
           },
           {
-            pathPattern: '^exports.*$',
-            order: ['types', 'require', 'import']
+            pathPattern: "^exports.*$",
+            order: ["types", "require", "import"]
           }
         ]
       }
     },
     {
-      files: ['*.d.ts'],
+      files: ["*.d.ts"],
       rules: {
-        'import/no-duplicates': 'off'
+        "import/no-duplicates": "off"
       }
     },
     {
-      files: ['*.js'],
+      files: ["*.js"],
       rules: {
-        '@typescript-eslint/no-var-requires': 'off'
+        "@typescript-eslint/no-var-requires": "off"
       }
     },
     {
-      files: ['scripts/**/*.*', 'cli.*'],
+      files: ["scripts/**/*.*", "cli.*"],
       rules: {
-        'no-console': 'off'
+        "no-console": "off"
       }
     },
     {
-      files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js'],
+      files: ["*.test.ts", "*.test.js", "*.spec.ts", "*.spec.js"],
       rules: {
-        'no-unused-expressions': 'off'
+        "no-unused-expressions": "off"
       }
     },
     {
-      files: ['**/*.md/*.*'],
+      files: ["**/*.md/*.*"],
       rules: {
-        '@typescript-eslint/no-redeclare': 'off',
-        '@typescript-eslint/no-unused-vars': 'off',
-        '@typescript-eslint/no-use-before-define': 'off',
-        '@typescript-eslint/no-var-requires': 'off',
-        '@typescript-eslint/comma-dangle': 'off',
-        'import/no-unresolved': 'off',
-        'no-alert': 'off',
-        'no-console': 'off',
-        'no-restricted-imports': 'off',
-        'no-undef': 'off',
-        'no-unused-expressions': 'off',
-        'no-unused-vars': 'off'
+        "@typescript-eslint/no-redeclare": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/comma-dangle": "off",
+        "import/no-unresolved": "off",
+        "no-alert": "off",
+        "no-console": "off",
+        "no-restricted-imports": "off",
+        "no-undef": "off",
+        "no-unused-expressions": "off",
+        "no-unused-vars": "off"
+      }
+    },
+    {
+      files: ["*.astro"],
+      parser: "astro-eslint-parser",
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+        extraFileExtensions: [".astro"],
+      },
+      rules: {
+        "astro/no-deprecated-astro-canonicalurl": "error",
+        "no-tabs": "off",
       }
     }
   ],
   rules: {
-    'eol-last': 'off',
-    'no-trailing-spaces': 'off',
-    'padded-blocks': 'off',
-    'yml/quotes': ['error', { prefer: 'single', avoidEscape: false }],
-    'yml/no-empty-document': 'off'
+    "eol-last": "off",
+    "no-trailing-spaces": "off",
+    "padded-blocks": "off",
+    "yml/quotes": ["error", { prefer: "single", avoidEscape: false }],
+    "yml/no-empty-document": "off"
   }
 };
