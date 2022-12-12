@@ -12,7 +12,6 @@ module.exports = {
     "plugin:jsonc/recommended-with-jsonc",
     "plugin:markdown/recommended",
     "plugin:yml/standard",
-    "plugin:astro/recommended",
     "./javascript",
     "./typescript"
   ],
@@ -155,18 +154,6 @@ module.exports = {
         "no-undef": "off",
         "no-unused-expressions": "off",
         "no-unused-vars": "off"
-      }
-    },
-    {
-      files: ["*.astro"],
-      parser: "astro-eslint-parser",
-      parserOptions: {
-        parser: "@typescript-eslint/parser",
-        extraFileExtensions: [".astro"],
-      },
-      rules: {
-        "astro/no-deprecated-astro-canonicalurl": "error",
-        "no-tabs": "off",
       }
     }
   ],
