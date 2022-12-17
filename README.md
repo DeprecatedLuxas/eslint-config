@@ -1,5 +1,7 @@
 # @luxass/eslint-config
 
+> A shareable ESLINT Config based on [@antfu/eslint-config](https://github.com/antfu/eslint-config)
+
 ## Installation
 
 ```bash
