@@ -181,7 +181,6 @@ module.exports = {
     "no-unused-vars": "warn",
     "no-param-reassign": "off",
     "array-bracket-spacing": ["error", "never"],
-    "brace-style": ["error", "stroustrup", { allowSingleLine: true }],
     "block-spacing": ["error", "always"],
     "camelcase": "off",
     "comma-spacing": ["error", { before: false, after: true }],
@@ -189,7 +188,7 @@ module.exports = {
     "comma-dangle": ["error", "never"],
     "no-constant-condition": "warn",
     "no-debugger": "error",
-    "no-console": ["error", { allow: ["warn", "error"] }],
+    "no-console": ["warn", { allow: ["warn", "error", "info"] }],
     "no-cond-assign": ["error", "always"],
     "func-call-spacing": ["off", "never"],
     "key-spacing": ["error", { beforeColon: false, afterColon: true }],
@@ -210,6 +209,7 @@ module.exports = {
         asyncArrow: "always"
       }
     ],
+    "no-multiple-empty-lines": ["warn", { max: 1, maxBOF: 0, maxEOF: 0 }],
     "no-var": "error",
     "prefer-const": [
       "error",
@@ -311,6 +311,8 @@ module.exports = {
       }
     ],
     "yml/quotes": ["error", { prefer: "single", avoidEscape: false }],
-    "yml/no-empty-document": "off"
+    "yml/no-empty-document": "off",
+    "padded-blocks": "off",
+    "no-trailing-spaces": ["error", { skipBlankLines: true }]
   }
 };
