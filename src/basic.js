@@ -166,6 +166,12 @@ module.exports = {
         "no-unused-expressions": "off",
         "no-unused-vars": "off"
       }
+    },
+    {
+      files: [".github/workflows/*.yml"],
+      rules: {
+        "yml/no-empty-mapping-value": "off"
+      }
     }
   ],
   rules: {
