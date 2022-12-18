@@ -19,14 +19,14 @@
     "eslintconfig",
     "eslint config"
   ],
-  "main": "src/index.js",
+  "main": "index.js",
   "files": [
-    "src"
+    "*.js"
   ],
   "scripts": {
     "bump": "bumpp package.json --commit --push --tag",
-    "release": "pnpm -r publish --access public",
-    "lint": "eslint --cache src/**/*.js"
+    "release": "pnpm publish --access public",
+    "lint": "eslint --cache *.js"
   },
   "peerDependencies": {
     "eslint": "^8.30.0",

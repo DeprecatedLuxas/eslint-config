@@ -181,7 +181,6 @@ module.exports = {
     "import/no-unresolved": "off",
     "import/no-absolute-path": "off",
     "semi": ["warn", "always"],
-    "curly": ["error", "multi-or-nest", "consistent"],
     "quotes": ["error", "double"],
     "quote-props": ["error", "consistent-as-needed"],
     "no-unused-vars": "warn",
