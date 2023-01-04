@@ -45,11 +45,20 @@ module.exports = {
         "jsonc/comma-dangle": ["error", "never"],
         "jsonc/comma-style": ["error", "last"],
         "jsonc/indent": ["error", 2],
-        "jsonc/key-spacing": ["error", { beforeColon: false, afterColon: true }],
+        "jsonc/key-spacing": [
+          "error",
+          { beforeColon: false, afterColon: true }
+        ],
         "jsonc/no-octal-escape": "error",
-        "jsonc/object-curly-newline": ["error", { multiline: true, consistent: true }],
+        "jsonc/object-curly-newline": [
+          "error",
+          { multiline: true, consistent: true }
+        ],
         "jsonc/object-curly-spacing": ["error", "always"],
-        "jsonc/object-property-newline": ["error", { allowMultiplePropertiesPerLine: true }]
+        "jsonc/object-property-newline": [
+          "error",
+          { allowMultiplePropertiesPerLine: true }
+        ]
       }
     },
     {
@@ -197,7 +206,11 @@ module.exports = {
     "no-cond-assign": ["error", "always"],
     "func-call-spacing": ["off", "never"],
     "key-spacing": ["error", { beforeColon: false, afterColon: true }],
-    "indent": ["error", 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
+    "indent": [
+      "error",
+      2,
+      { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }
+    ],
     "no-restricted-syntax": [
       "error",
       "DebuggerStatement",
@@ -245,17 +258,21 @@ module.exports = {
     "template-curly-spacing": "error",
     "arrow-parens": ["error", "as-needed", { requireForBlockBody: true }],
     "generator-star-spacing": "off",
-    "spaced-comment": ["error", "always", {
-      line: {
-        markers: ["/"],
-        exceptions: ["/", "#"]
-      },
-      block: {
-        markers: ["!"],
-        exceptions: ["*"],
-        balanced: true
+    "spaced-comment": [
+      "error",
+      "always",
+      {
+        line: {
+          markers: ["/"],
+          exceptions: ["/", "#"]
+        },
+        block: {
+          markers: ["!"],
+          exceptions: ["*"],
+          balanced: true
+        }
       }
-    }],
+    ],
     "array-callback-return": "error",
     "block-scoped-var": "error",
     "consistent-return": "off",
@@ -298,7 +315,10 @@ module.exports = {
     // Use new when throwing error
     "unicorn/throw-new-error": "error",
 
-    "no-use-before-define": ["error", { functions: false, classes: false, variables: true }],
+    "no-use-before-define": [
+      "error",
+      { functions: false, classes: false, variables: true }
+    ],
     "eslint-comments/disable-enable-pair": "off",
     "import/no-named-as-default-member": "off",
     "import/no-named-as-default": "off",
