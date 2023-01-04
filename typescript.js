@@ -18,10 +18,6 @@ module.exports = {
       "error",
       { "ts-ignore": "allow-with-description" }
     ],
-    "@typescript-eslint/member-delimiter-style": [
-      "error",
-      { multiline: { delimiter: "none" } }
-    ],
     "@typescript-eslint/type-annotation-spacing": ["error", {}],
     "@typescript-eslint/consistent-type-imports": [
       "error",
