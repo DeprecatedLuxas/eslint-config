@@ -1,6 +1,6 @@
 {
   "name": "@luxass/eslint-config",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "luxass' ESLint config",
   "author": {
     "name": "Lucas Norgaard",
@@ -24,8 +24,6 @@
     "*.js"
   ],
   "scripts": {
-    "bump": "bumpp package.json --commit --push --tag",
-    "release": "pnpm publish --access public",
     "lint": "eslint --cache *.js"
   },
   "peerDependencies": {
@@ -51,8 +49,7 @@
     "local-pkg": "^0.4.2"
   },
   "devDependencies": {
-    "@luxass/prettier-config": "^1.1.1",
-    "bumpp": "^8.2.1",
+    "@luxass/prettier-config": "^1.1.4",
     "eslint": "^8.30.0",
     "prettier": "^2.8.1",
     "typescript": "^4.9.4"

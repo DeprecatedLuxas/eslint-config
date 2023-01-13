@@ -256,7 +256,7 @@ module.exports = {
     "prefer-spread": "error",
     "prefer-template": "error",
     "template-curly-spacing": "error",
-    "arrow-parens": ["error", "as-needed", { requireForBlockBody: true }],
+    "arrow-parens": ["error", "always"],
     "generator-star-spacing": "off",
     "spaced-comment": [
       "error",
@@ -288,7 +288,7 @@ module.exports = {
     "vars-on-top": "error",
     "require-await": "off",
     "no-return-assign": "off",
-    "operator-linebreak": ["error", "before"],
+    "operator-linebreak": ["error", "after"],
     "max-statements-per-line": ["error", { max: 1 }],
 
     // unicorns
@@ -335,7 +335,7 @@ module.exports = {
         allowSeparatedGroups: false
       }
     ],
-    "yml/quotes": ["error", { prefer: "single", avoidEscape: false }],
+    "yml/quotes": ["error", { prefer: "double", avoidEscape: true }],
     "yml/no-empty-document": "off",
     "padded-blocks": "off",
     "no-trailing-spaces": ["error", { skipBlankLines: true }]
