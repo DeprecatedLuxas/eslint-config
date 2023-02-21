@@ -1,8 +1,8 @@
-const basic = require("./basic");
+const basic = require("@luxass/eslint-config-js");
 
 module.exports = {
   extends: [
-    "./basic",
+    "@luxass/eslint-config-js",
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended"
   ],
@@ -14,17 +14,24 @@ module.exports = {
   overrides: basic.overrides,
   rules: {
     "import/named": "off",
+
+    // TS
     "@typescript-eslint/ban-ts-comment": [
       "error",
       { "ts-ignore": "allow-with-description" }
+    ],
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      { multiline: { delimiter: "none" } }
     ],
     "@typescript-eslint/type-annotation-spacing": ["error", {}],
     "@typescript-eslint/consistent-type-imports": [
       "error",
       { prefer: "type-imports", disallowTypeAnnotations: false }
     ],
-    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
     "@typescript-eslint/prefer-ts-expect-error": "error",
+
+    // Override JS
     "no-useless-constructor": "off",
     "indent": "off",
     "@typescript-eslint/indent": [
@@ -69,8 +76,6 @@ module.exports = {
         offsetTernaryExpressions: true
       }
     ],
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "no-redeclare": "off",
     "@typescript-eslint/no-redeclare": "error",
     "no-use-before-define": "off",
@@ -121,6 +126,8 @@ module.exports = {
       "always",
       { exceptAfterSingleLine: true }
     ],
+
+    // off
     "@typescript-eslint/consistent-indexed-object-style": "off",
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
@@ -134,6 +141,8 @@ module.exports = {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-namespace": "off",
-    "@typescript-eslint/triple-slash-reference": "off"
+    "@typescript-eslint/triple-slash-reference": "off",
+    // handled by unused-imports/no-unused-imports
+    "@typescript-eslint/no-unused-vars": "off"
   }
 };

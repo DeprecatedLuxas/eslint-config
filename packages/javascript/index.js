@@ -22,7 +22,6 @@ module.exports = {
     "out",
     "output",
     "LICENSE*",
-    "coverage",
     "public",
     "package-lock.json",
     "pnpm-lock.yaml",
@@ -30,7 +29,7 @@ module.exports = {
     "!.github",
     "!.vscode"
   ],
-  plugins: ["html", "unicorn"],
+  plugins: ["html", "unicorn", "unused-imports"],
   settings: {
     "import/resolver": {
       node: { extensions: [".js", ".mjs"] }
@@ -38,7 +37,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.json", "*.json5"],
+      files: ["*.json", "*.jsonc", "*.json5"],
       parser: "jsonc-eslint-parser",
       rules: {
         "jsonc/array-bracket-spacing": ["error", "never"],
@@ -135,7 +134,7 @@ module.exports = {
       }
     },
     {
-      files: ["*.js"],
+      files: ["*.js", "*.cjs"],
       rules: {
         "@typescript-eslint/no-var-requires": "off"
       }
@@ -159,6 +158,7 @@ module.exports = {
       }
     },
     {
+      // Code blocks in markdown files
       files: ["**/*.md/*.*"],
       rules: {
         "@typescript-eslint/no-redeclare": "off",
@@ -168,6 +168,8 @@ module.exports = {
         "@typescript-eslint/comma-dangle": "off",
         "@typescript-eslint/consistent-type-imports": "off",
         "import/no-unresolved": "off",
+        "unused-imports/no-unused-imports": "off",
+        "unused-imports/no-unused-vars": "off",
         "no-alert": "off",
         "no-console": "off",
         "no-restricted-imports": "off",
@@ -184,15 +186,30 @@ module.exports = {
     }
   ],
   rules: {
+    // import
     "import/order": "error",
     "import/first": "error",
     "import/no-mutable-exports": "error",
     "import/no-unresolved": "off",
     "import/no-absolute-path": "off",
+
+    // Common
     "semi": ["warn", "always"],
     "quotes": ["error", "double"],
     "quote-props": ["error", "consistent-as-needed"],
-    "no-unused-vars": "warn",
+    "padded-blocks": "off",
+
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        vars: "all",
+        varsIgnorePattern: "^_",
+        args: "after-used",
+        argsIgnorePattern: "^_"
+      }
+    ],
+
     "no-param-reassign": "off",
     "array-bracket-spacing": ["error", "never"],
     "block-spacing": ["error", "always"],
@@ -227,7 +244,9 @@ module.exports = {
         asyncArrow: "always"
       }
     ],
-    "no-multiple-empty-lines": ["warn", { max: 1, maxBOF: 0, maxEOF: 0 }],
+    "no-multiple-empty-lines": "off",
+
+    // es6
     "no-var": "error",
     "prefer-const": [
       "error",
@@ -256,7 +275,6 @@ module.exports = {
     "prefer-spread": "error",
     "prefer-template": "error",
     "template-curly-spacing": "error",
-    "arrow-parens": ["error", "always"],
     "generator-star-spacing": "off",
     "spaced-comment": [
       "error",
@@ -273,6 +291,8 @@ module.exports = {
         }
       }
     ],
+
+    // best practices
     "array-callback-return": "error",
     "block-scoped-var": "error",
     "consistent-return": "off",
@@ -335,9 +355,22 @@ module.exports = {
         allowSeparatedGroups: false
       }
     ],
+
+    // yml
     "yml/quotes": ["error", { prefer: "double", avoidEscape: true }],
     "yml/no-empty-document": "off",
-    "padded-blocks": "off",
-    "no-trailing-spaces": ["error", { skipBlankLines: true }]
+
+    // https://github.com/antfu/eslint-config/pull/152
+    "no-mixed-operators": [
+      "error",
+      {
+        groups: [
+          ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
+          ["&&", "||", "?:"],
+          ["in", "instanceof"]
+        ],
+        allowSamePrecedence: true
+      }
+    ]
   }
 };
