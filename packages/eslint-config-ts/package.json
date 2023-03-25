@@ -1,6 +1,6 @@
 {
   "name": "@luxass/eslint-config-ts",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "luxass' ESLint config",
   "author": {
     "name": "Lucas Nørgaard",
