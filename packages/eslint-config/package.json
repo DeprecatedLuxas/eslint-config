@@ -3,7 +3,7 @@
   "version": "3.0.1",
   "description": "luxass' ESLint config",
   "author": {
-    "name": "Lucas Norgaard",
+    "name": "Lucas Nørgaard",
     "email": "lucasnrgaard@gmail.com",
     "url": "https://luxass.dev"
   },
@@ -24,8 +24,8 @@
     "lint": "eslint . --config=index.js"
   },
   "peerDependencies": {
-    "eslint": "^8.30.0",
-    "typescript": "^4.9.4"
+    "eslint": ">=8.8.0",
+    "typescript": ">=4.5.5"
   },
   "dependencies": {
     "@luxass/eslint-config-js": "workspace:*",
@@ -33,7 +33,6 @@
     "local-pkg": "^0.4.2"
   },
   "devDependencies": {
-    "eslint": "^8.30.0",
-    "typescript": "^4.9.5"
+    "eslint": "^8.36.0"
   }
 }

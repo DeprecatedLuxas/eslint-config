@@ -1,4 +1,4 @@
-const basic = require("@luxass/eslint-config-js");
+const basic = require("../eslint-config-js");
 
 module.exports = {
   extends: [
