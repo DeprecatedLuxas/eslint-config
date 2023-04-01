@@ -122,7 +122,7 @@ module.exports = {
           },
           {
             pathPattern: "^exports.*$",
-            order: ["types", "require", "import"]
+            order: ["import", "require", "types"]
           }
         ]
       }
