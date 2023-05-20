@@ -18,7 +18,7 @@
   ],
   "main": "index.js",
   "files": [
-    "*.js"
+    "index.js"
   ],
   "scripts": {
     "lint": "eslint . --config=index.js"
