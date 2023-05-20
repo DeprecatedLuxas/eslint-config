@@ -17,9 +17,7 @@
   },
   "devDependencies": {
     "@luxass/eslint-config": "workspace:*",
-    "@luxass/prettier-config": "^1.2.0",
     "eslint": "^8.36.0",
-    "prettier": "^2.8.7",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.4"
   }
 }
