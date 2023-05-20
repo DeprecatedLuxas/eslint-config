@@ -6,7 +6,7 @@ module.exports = {
   },
   reportUnusedDisableDirectives: true,
   extends: [
-    "eslint-config-standard",
+    "./standard",
     "plugin:import/recommended",
     "plugin:eslint-comments/recommended",
     "plugin:jsonc/recommended-with-jsonc",
@@ -18,16 +18,32 @@ module.exports = {
     "*.d.ts",
     "CHANGELOG.md",
     "dist",
-    "build",
-    "out",
-    "output",
     "LICENSE*",
+    "output",
+    "out",
+    "coverage",
     "public",
+    "temp",
     "package-lock.json",
     "pnpm-lock.yaml",
     "yarn.lock",
+    "__snapshots__",
+    // ignore for in lint-staged
+    "*.css",
+    "*.png",
+    "*.ico",
+    "*.toml",
+    "*.patch",
+    "*.txt",
+    "*.crt",
+    "*.key",
+    "Dockerfile",
+    // force include
     "!.github",
-    "!.vscode"
+    "!.vitepress",
+    "!.vscode",
+    // force exclude
+    ".vitepress/cache"
   ],
   plugins: ["html", "unicorn", "unused-imports"],
   settings: {
@@ -44,20 +60,11 @@ module.exports = {
         "jsonc/comma-dangle": ["error", "never"],
         "jsonc/comma-style": ["error", "last"],
         "jsonc/indent": ["error", 2],
-        "jsonc/key-spacing": [
-          "error",
-          { beforeColon: false, afterColon: true }
-        ],
+        "jsonc/key-spacing": ["error", { beforeColon: false, afterColon: true }],
         "jsonc/no-octal-escape": "error",
-        "jsonc/object-curly-newline": [
-          "error",
-          { multiline: true, consistent: true }
-        ],
+        "jsonc/object-curly-newline": ["error", { multiline: true, consistent: true }],
         "jsonc/object-curly-spacing": ["error", "always"],
-        "jsonc/object-property-newline": [
-          "error",
-          { allowMultiplePropertiesPerLine: true }
-        ]
+        "jsonc/object-property-newline": ["error", { allowMultiplePropertiesPerLine: true }]
       }
     },
     {
@@ -76,12 +83,13 @@ module.exports = {
           {
             pathPattern: "^$",
             order: [
-              "name",
               "publisher",
+              "name",
               "displayName",
               "type",
               "version",
               "private",
+              "packageManager",
               "description",
               "author",
               "license",
@@ -95,13 +103,14 @@ module.exports = {
               "exports",
               "main",
               "module",
+              "unpkg",
+              "jsdelivr",
               "types",
               "typesVersions",
               "bin",
               "icon",
               "files",
               "engines",
-              "packageManager",
               "activationEvents",
               "contributes",
               "scripts",
@@ -113,6 +122,9 @@ module.exports = {
               "pnpm",
               "overrides",
               "resolutions",
+              "husky",
+              "simple-git-hooks",
+              "lint-staged",
               "eslintConfig"
             ]
           },
@@ -122,7 +134,11 @@ module.exports = {
           },
           {
             pathPattern: "^exports.*$",
-            order: ["import", "require", "types"]
+            order: [
+              "types",
+              "require",
+              "import"
+            ]
           }
         ]
       }
@@ -134,9 +150,10 @@ module.exports = {
       }
     },
     {
-      files: ["*.js", "*.cjs"],
+      files: ["*.js", "*.cjs", "*.jsx"],
       rules: {
-        "@typescript-eslint/no-var-requires": "off"
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-require-imports": "off"
       }
     },
     {
@@ -192,24 +209,18 @@ module.exports = {
     "import/no-mutable-exports": "error",
     "import/no-unresolved": "off",
     "import/no-absolute-path": "off",
+    "import/newline-after-import": ["error", { count: 1, considerComments: true }],
 
     // Common
-    "semi": ["warn", "always"],
+    "semi": ["error", "always"],
     "quotes": ["error", "double"],
     "quote-props": ["error", "consistent-as-needed"],
     "padded-blocks": "off",
-
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "warn",
-      {
-        vars: "all",
-        varsIgnorePattern: "^_",
-        args: "after-used",
-        argsIgnorePattern: "^_"
-      }
+      { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" }
     ],
-
     "no-param-reassign": "off",
     "array-bracket-spacing": ["error", "never"],
     "block-spacing": ["error", "always"],
@@ -223,11 +234,7 @@ module.exports = {
     "no-cond-assign": ["error", "always"],
     "func-call-spacing": ["off", "never"],
     "key-spacing": ["error", { beforeColon: false, afterColon: true }],
-    "indent": [
-      "error",
-      2,
-      { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }
-    ],
+    "indent": ["error", 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
     "no-restricted-syntax": [
       "error",
       "DebuggerStatement",
@@ -251,7 +258,7 @@ module.exports = {
     "prefer-const": [
       "error",
       {
-        destructuring: "any",
+        destructuring: "all",
         ignoreReadBeforeAssign: true
       }
     ],
@@ -305,11 +312,16 @@ module.exports = {
     "no-with": "error",
     "no-void": "error",
     "no-useless-escape": "off",
+    "no-invalid-this": "error",
     "vars-on-top": "error",
     "require-await": "off",
     "no-return-assign": "off",
     "operator-linebreak": ["error", "after"],
     "max-statements-per-line": ["error", { max: 1 }],
+
+    "n/prefer-global/buffer": ["error", "never"],
+    "n/no-callback-literal": "off",
+
 
     // unicorns
     // Pass error message when throwing errors
@@ -334,16 +346,14 @@ module.exports = {
     "unicorn/prefer-type-error": "error",
     // Use new when throwing error
     "unicorn/throw-new-error": "error",
+    // Prefer using the node: protocol
+    "unicorn/prefer-node-protocol": "error",
 
-    "no-use-before-define": [
-      "error",
-      { functions: false, classes: false, variables: true }
-    ],
+    "no-use-before-define": ["error", { functions: false, classes: false, variables: true }],
     "eslint-comments/disable-enable-pair": "off",
     "import/no-named-as-default-member": "off",
     "import/no-named-as-default": "off",
     "import/namespace": "off",
-    "n/no-callback-literal": "off",
 
     "sort-imports": [
       "error",
