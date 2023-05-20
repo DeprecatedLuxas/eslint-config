@@ -45,7 +45,7 @@ module.exports = {
     // force exclude
     ".vitepress/cache"
   ],
-  plugins: ["html", "unicorn", "unused-imports"],
+  plugins: ["html", "unicorn", "antfu", "unused-imports"],
   settings: {
     "import/resolver": {
       node: { extensions: [".js", ".mjs"] }
@@ -381,6 +381,8 @@ module.exports = {
         ],
         allowSamePrecedence: true
       }
-    ]
+    ],
+    "antfu/import-dedupe": "error",
+    "antfu/top-level-function": "error"
   }
 };
