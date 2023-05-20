@@ -1,5 +1,5 @@
 {
-  "name": "@luxass/eslint-config-react",
+  "name": "@luxass/eslint-config-vue",
   "version": "3.1.1",
   "description": "luxass' ESLint config",
   "author": {
@@ -11,7 +11,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/luxass/eslint-config.git",
-    "directory": "packages/eslint-config-react"
+    "directory": "packages/eslint-config-vue"
   },
   "keywords": [
     "eslint-config"
@@ -27,13 +27,12 @@
     "eslint": ">=8.8.0"
   },
   "dependencies": {
+    "@luxass/eslint-config-js": "workspace:*",
     "@luxass/eslint-config-ts": "workspace:*",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-vue": "^9.11.0",
+    "local-pkg": "^0.4.3"
   },
   "devDependencies": {
-    "eslint": "^8.36.0",
-    "react": "^18.2.0",
-    "typescript": "^5.0.4"
+    "eslint": "^8.36.0"
   }
 }

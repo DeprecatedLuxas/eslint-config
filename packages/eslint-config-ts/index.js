@@ -14,18 +14,13 @@ module.exports = {
   overrides: basic.overrides,
   rules: {
     "import/named": "off",
-
-    // TS
-    "@typescript-eslint/ban-ts-comment": [
-      "error",
-      { "ts-ignore": "allow-with-description" }
-    ],
+    "@typescript-eslint/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }],
+    "@typescript-eslint/member-delimiter-style": ["error", { multiline: { delimiter: "none" } }],
     "@typescript-eslint/type-annotation-spacing": ["error", {}],
-    "@typescript-eslint/consistent-type-imports": [
-      "error",
-      { prefer: "type-imports", disallowTypeAnnotations: false }
-    ],
+    "@typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports", disallowTypeAnnotations: false }],
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     "@typescript-eslint/prefer-ts-expect-error": "error",
+    "@typescript-eslint/no-require-imports": "error",
 
     // Override JS
     "no-useless-constructor": "off",
@@ -72,6 +67,8 @@ module.exports = {
         offsetTernaryExpressions: true
       }
     ],
+    "no-invalid-this": "off",
+    "@typescript-eslint/no-invalid-this": "error",
     "no-redeclare": "off",
     "@typescript-eslint/no-redeclare": "error",
     "no-use-before-define": "off",
@@ -84,7 +81,7 @@ module.exports = {
     "object-curly-spacing": "off",
     "@typescript-eslint/object-curly-spacing": ["error", "always"],
     "semi": "off",
-    "@typescript-eslint/semi": ["warn", "always"],
+    "@typescript-eslint/semi": ["error", "always"],
     "quotes": "off",
     "@typescript-eslint/quotes": ["error", "double"],
     "space-before-blocks": "off",
@@ -101,15 +98,9 @@ module.exports = {
     "space-infix-ops": "off",
     "@typescript-eslint/space-infix-ops": "error",
     "keyword-spacing": "off",
-    "@typescript-eslint/keyword-spacing": [
-      "error",
-      { before: true, after: true }
-    ],
+    "@typescript-eslint/keyword-spacing": ["error", { before: true, after: true }],
     "comma-spacing": "off",
-    "@typescript-eslint/comma-spacing": [
-      "error",
-      { before: false, after: true }
-    ],
+    "@typescript-eslint/comma-spacing": ["error", { before: false, after: true }],
     "no-extra-parens": "off",
     "@typescript-eslint/no-extra-parens": ["error", "functions"],
     "no-dupe-class-members": "off",
@@ -117,11 +108,12 @@ module.exports = {
     "no-loss-of-precision": "off",
     "@typescript-eslint/no-loss-of-precision": "error",
     "lines-between-class-members": "off",
-    "@typescript-eslint/lines-between-class-members": [
-      "error",
-      "always",
-      { exceptAfterSingleLine: true }
-    ],
+    "@typescript-eslint/lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],
+
+    // antfu
+    "antfu/generic-spacing": "error",
+    "antfu/no-cjs-exports": "error",
+    "antfu/no-ts-export-equal": "error",
 
     // off
     "@typescript-eslint/consistent-indexed-object-style": "off",
@@ -136,7 +128,6 @@ module.exports = {
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/ban-types": "off",
-    "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/triple-slash-reference": "off",
     // handled by unused-imports/no-unused-imports
     "@typescript-eslint/no-unused-vars": "off"
