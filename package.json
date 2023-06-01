@@ -1,7 +1,7 @@
 {
   "name": "@luxass/eslint-config-monorepo",
   "private": true,
-  "packageManager": "pnpm@7.29.0",
+  "packageManager": "pnpm@7.33.0",
   "author": {
     "name": "Lucas Nørgård",
     "email": "lucasnrgaard@gmail.com",
@@ -13,11 +13,12 @@
     "url": "https://github.com/luxass/eslint-config.git"
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
     "@luxass/eslint-config": "workspace:*",
-    "eslint": "^8.36.0",
+    "eslint": "^8.41.0",
     "typescript": "^5.0.4"
   }
 }
