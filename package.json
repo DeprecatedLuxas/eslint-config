@@ -1,5 +1,6 @@
 {
   "name": "@luxass/eslint-config-monorepo",
+  "version": "3.2.1",
   "private": true,
   "packageManager": "pnpm@7.33.0",
   "author": {
@@ -20,6 +21,5 @@
     "@luxass/eslint-config": "workspace:*",
     "eslint": "^8.41.0",
     "typescript": "^5.0.4"
-  },
-  "version": "3.2.1"
+  }
 }
