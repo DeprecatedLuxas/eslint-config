@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@luxass/eslint-config": "workspace:*",
-    "eslint": "^8.41.0",
-    "typescript": "^5.0.4"
+    "eslint": "^8.42.0",
+    "typescript": "^5.1.3"
   }
 }

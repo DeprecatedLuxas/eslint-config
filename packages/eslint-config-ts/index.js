@@ -18,7 +18,7 @@ module.exports = {
     "@typescript-eslint/member-delimiter-style": ["error", { multiline: { delimiter: "none" } }],
     "@typescript-eslint/type-annotation-spacing": ["error", {}],
     "@typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports", disallowTypeAnnotations: false }],
-    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/prefer-ts-expect-error": "error",
     "@typescript-eslint/no-require-imports": "error",
 
