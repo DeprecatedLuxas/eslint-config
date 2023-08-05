@@ -29,11 +29,10 @@
   },
   "dependencies": {
     "@luxass/eslint-config-js": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0"
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1"
   },
   "devDependencies": {
-    "eslint": "^8.42.0",
-    "typescript": "^5.1.3"
+    "eslint": "^8.45.0"
   }
 }

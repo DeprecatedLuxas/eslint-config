@@ -18,11 +18,13 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "bump": "npx bumpp -r --no-tag",
+    "release": "pnpm -r publish"
   },
   "devDependencies": {
     "@luxass/eslint-config": "workspace:*",
-    "eslint": "^8.42.0",
-    "typescript": "^5.1.3"
+    "eslint": "^8.45.0",
+    "typescript": "^5.1.6"
   }
 }
