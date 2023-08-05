@@ -2,7 +2,7 @@ module.exports = {
   env: {
     es6: true,
     browser: true,
-    node: true
+    node: true,
   },
   reportUnusedDisableDirectives: true,
   extends: [
@@ -11,7 +11,7 @@ module.exports = {
     "plugin:eslint-comments/recommended",
     "plugin:jsonc/recommended-with-jsonc",
     "plugin:yml/standard",
-    "plugin:markdown/recommended"
+    "plugin:markdown/recommended",
   ],
   ignorePatterns: [
     "*.min.*",
@@ -43,13 +43,13 @@ module.exports = {
     "!.vitepress",
     "!.vscode",
     // force exclude
-    ".vitepress/cache"
+    ".vitepress/cache",
   ],
   plugins: ["html", "unicorn", "antfu", "unused-imports"],
   settings: {
     "import/resolver": {
-      node: { extensions: [".js", ".mjs"] }
-    }
+      node: { extensions: [".js", ".mjs"] },
+    },
   },
   overrides: [
     {
@@ -64,15 +64,15 @@ module.exports = {
         "jsonc/no-octal-escape": "error",
         "jsonc/object-curly-newline": ["error", { multiline: true, consistent: true }],
         "jsonc/object-curly-spacing": ["error", "always"],
-        "jsonc/object-property-newline": ["error", { allowMultiplePropertiesPerLine: true }]
-      }
+        "jsonc/object-property-newline": ["error", { allowMultiplePropertiesPerLine: true }],
+      },
     },
     {
       files: ["*.yaml", "*.yml"],
       parser: "yaml-eslint-parser",
       rules: {
-        "spaced-comment": "off"
-      }
+        "spaced-comment": "off",
+      },
     },
     {
       files: ["package.json"],
@@ -125,54 +125,55 @@ module.exports = {
               "husky",
               "simple-git-hooks",
               "lint-staged",
-              "eslintConfig"
-            ]
+              "eslintConfig",
+            ],
           },
           {
             pathPattern: "^(?:dev|peer|optional|bundled)?[Dd]ependencies$",
-            order: { type: "asc" }
+            order: { type: "asc" },
           },
           {
             pathPattern: "^exports.*$",
             order: [
               "types",
+              "import",
               "require",
-              "import"
-            ]
-          }
-        ]
-      }
+              "default",
+            ],
+          },
+        ],
+      },
     },
     {
       files: ["*.d.ts"],
       rules: {
-        "import/no-duplicates": "off"
-      }
+        "import/no-duplicates": "off",
+      },
     },
     {
       files: ["*.js", "*.cjs", "*.jsx"],
       rules: {
         "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/no-require-imports": "off"
-      }
+        "@typescript-eslint/no-require-imports": "off",
+      },
     },
     {
       files: ["*.ts", "*.tsx", "*.mts", "*.cts"],
       rules: {
-        "no-void": ["error", { allowAsStatement: true }]
-      }
+        "no-void": ["error", { allowAsStatement: true }],
+      },
     },
     {
       files: ["scripts/**/*.*", "cli.*"],
       rules: {
-        "no-console": "off"
-      }
+        "no-console": "off",
+      },
     },
     {
       files: ["*.test.ts", "*.test.js", "*.spec.ts", "*.spec.js"],
       rules: {
-        "no-unused-expressions": "off"
-      }
+        "no-unused-expressions": "off",
+      },
     },
     {
       // Code blocks in markdown files
@@ -184,6 +185,8 @@ module.exports = {
         "@typescript-eslint/no-var-requires": "off",
         "@typescript-eslint/comma-dangle": "off",
         "@typescript-eslint/consistent-type-imports": "off",
+        "@typescript-eslint/no-namespace": "off",
+        "@typescript-eslint/no-require-imports": "off",
         "import/no-unresolved": "off",
         "unused-imports/no-unused-imports": "off",
         "unused-imports/no-unused-vars": "off",
@@ -192,15 +195,12 @@ module.exports = {
         "no-restricted-imports": "off",
         "no-undef": "off",
         "no-unused-expressions": "off",
-        "no-unused-vars": "off"
-      }
+        "no-unused-vars": "off",
+        "antfu/no-cjs-exports": "off",
+        "antfu/no-ts-export-equal": "off",
+        "n/prefer-global/process": "off",
+      },
     },
-    {
-      files: [".github/workflows/*.yml"],
-      rules: {
-        "yml/no-empty-mapping-value": "off"
-      }
-    }
   ],
   rules: {
     // import
@@ -210,16 +210,16 @@ module.exports = {
     "import/no-unresolved": "off",
     "import/no-absolute-path": "off",
     "import/newline-after-import": ["error", { count: 1, considerComments: true }],
+    "import/no-self-import": "error",
 
     // Common
     "semi": ["error", "always"],
     "quotes": ["error", "double"],
     "quote-props": ["error", "consistent-as-needed"],
-    "padded-blocks": "off",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
       "warn",
-      { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" }
+      { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" },
     ],
     "no-param-reassign": "off",
     "array-bracket-spacing": ["error", "never"],
@@ -227,19 +227,19 @@ module.exports = {
     "camelcase": "off",
     "comma-spacing": ["error", { before: false, after: true }],
     "comma-style": ["error", "last"],
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": ["error", "always-multiline"],
     "no-constant-condition": "warn",
     "no-debugger": "error",
-    "no-console": ["warn", { allow: ["warn", "error", "info"] }],
+    "no-console": ["error", { allow: ["warn", "error", "info"] }],
     "no-cond-assign": ["error", "always"],
-    "func-call-spacing": ["off", "never"],
+    "func-call-spacing": "off",
     "key-spacing": ["error", { beforeColon: false, afterColon: true }],
     "indent": ["error", 2, { SwitchCase: 1, VariableDeclarator: 1, outerIIFEBody: 1 }],
     "no-restricted-syntax": [
       "error",
       "DebuggerStatement",
       "LabeledStatement",
-      "WithStatement"
+      "WithStatement",
     ],
     "object-curly-spacing": ["error", "always"],
     "no-return-await": "off",
@@ -248,10 +248,22 @@ module.exports = {
       {
         anonymous: "always",
         named: "never",
-        asyncArrow: "always"
-      }
+        asyncArrow: "always",
+      },
     ],
-    "no-multiple-empty-lines": "off",
+    "no-restricted-globals": [
+      "error",
+      { name: "global", message: "Use `globalThis` instead." },
+      { name: "self", message: "Use `globalThis` instead." },
+    ],
+    "no-restricted-properties": [
+      "error",
+      { property: "__proto__", message: "Use `Object.getPrototypeOf` or `Object.setPrototypeOf` instead." },
+      { property: "__defineGetter__", message: "Use `Object.defineProperty` instead." },
+      { property: "__defineSetter__", message: "Use `Object.defineProperty` instead." },
+      { property: "__lookupGetter__", message: "Use `Object.getOwnPropertyDescriptor` instead." },
+      { property: "__lookupSetter__", message: "Use `Object.getOwnPropertyDescriptor` instead." },
+    ],
 
     // es6
     "no-var": "error",
@@ -259,23 +271,23 @@ module.exports = {
       "error",
       {
         destructuring: "all",
-        ignoreReadBeforeAssign: true
-      }
+        ignoreReadBeforeAssign: true,
+      },
     ],
     "prefer-arrow-callback": [
       "error",
       {
         allowNamedFunctions: false,
-        allowUnboundThis: true
-      }
+        allowUnboundThis: true,
+      },
     ],
     "object-shorthand": [
       "error",
       "always",
       {
         ignoreConstructors: false,
-        avoidQuotes: true
-      }
+        avoidQuotes: true,
+      },
     ],
     "prefer-exponentiation-operator": "error",
     "prefer-rest-params": "error",
@@ -289,17 +301,17 @@ module.exports = {
       {
         line: {
           markers: ["/"],
-          exceptions: ["/", "#"]
+          exceptions: ["/", "#"],
         },
         block: {
           markers: ["!"],
           exceptions: ["*"],
-          balanced: true
-        }
-      }
+          balanced: true,
+        },
+      },
     ],
 
-    // best practices
+    // best-practice
     "array-callback-return": "error",
     "block-scoped-var": "error",
     "consistent-return": "off",
@@ -316,12 +328,13 @@ module.exports = {
     "vars-on-top": "error",
     "require-await": "off",
     "no-return-assign": "off",
-    "operator-linebreak": ["error", "after"],
+    "operator-linebreak": ["error", "before"],
     "max-statements-per-line": ["error", { max: 1 }],
 
+    // node
+    "n/prefer-global/process": ["error", "never"],
     "n/prefer-global/buffer": ["error", "never"],
     "n/no-callback-literal": "off",
-
 
     // unicorns
     // Pass error message when throwing errors
@@ -348,6 +361,10 @@ module.exports = {
     "unicorn/throw-new-error": "error",
     // Prefer using the node: protocol
     "unicorn/prefer-node-protocol": "error",
+    // Prefer using number properties like `Number.isNaN` rather than `isNaN`
+    "unicorn/prefer-number-properties": "error",
+    // Ban `new Array` as `Array` constructor's params are ambiguous
+    "unicorn/no-new-array": "error",
 
     "no-use-before-define": ["error", { functions: false, classes: false, variables: true }],
     "eslint-comments/disable-enable-pair": "off",
@@ -362,27 +379,16 @@ module.exports = {
         ignoreDeclarationSort: true,
         ignoreMemberSort: false,
         memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
-        allowSeparatedGroups: false
-      }
+        allowSeparatedGroups: false,
+      },
     ],
 
     // yml
     "yml/quotes": ["error", { prefer: "double", avoidEscape: true }],
     "yml/no-empty-document": "off",
 
-    // https://github.com/antfu/eslint-config/pull/152
-    "no-mixed-operators": [
-      "error",
-      {
-        groups: [
-          ["==", "!=", "===", "!==", ">", ">=", "<", "<="],
-          ["&&", "||", "?:"],
-          ["in", "instanceof"]
-        ],
-        allowSamePrecedence: true
-      }
-    ],
+    "antfu/no-import-node-modules-by-path": "error",
     "antfu/import-dedupe": "error",
-    "antfu/top-level-function": "error"
-  }
+    "antfu/top-level-function": "error",
+  },
 };

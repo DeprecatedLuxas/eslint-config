@@ -4,12 +4,12 @@ module.exports = {
   extends: [
     "@luxass/eslint-config-js",
     "plugin:import/typescript",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
   ],
   settings: {
     "import/resolver": {
-      node: { extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"] }
-    }
+      node: { extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"] },
+    },
   },
   overrides: basic.overrides,
   rules: {
@@ -18,7 +18,7 @@ module.exports = {
     "@typescript-eslint/member-delimiter-style": ["error", { multiline: { delimiter: "none" } }],
     "@typescript-eslint/type-annotation-spacing": ["error", {}],
     "@typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports", disallowTypeAnnotations: false }],
-    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
     "@typescript-eslint/prefer-ts-expect-error": "error",
     "@typescript-eslint/no-require-imports": "error",
 
@@ -62,10 +62,10 @@ module.exports = {
           "TSTypeParameterInstantiation",
           "FunctionExpression > .params[decorators.length > 0]",
           "FunctionExpression > .params > :matches(Decorator, :not(:first-child))",
-          "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key"
+          "ClassBody.body > PropertyDefinition[decorators.length > 0] > .key",
         ],
-        offsetTernaryExpressions: true
-      }
+        offsetTernaryExpressions: true,
+      },
     ],
     "no-invalid-this": "off",
     "@typescript-eslint/no-invalid-this": "error",
@@ -74,10 +74,10 @@ module.exports = {
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": [
       "error",
-      { functions: false, classes: false, variables: true }
+      { functions: false, classes: false, variables: true },
     ],
     "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": ["error", "never"],
+    "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
     "object-curly-spacing": "off",
     "@typescript-eslint/object-curly-spacing": ["error", "always"],
     "semi": "off",
@@ -92,8 +92,8 @@ module.exports = {
       {
         anonymous: "always",
         named: "never",
-        asyncArrow: "always"
-      }
+        asyncArrow: "always",
+      },
     ],
     "space-infix-ops": "off",
     "@typescript-eslint/space-infix-ops": "error",
@@ -114,6 +114,8 @@ module.exports = {
     "antfu/generic-spacing": "error",
     "antfu/no-cjs-exports": "error",
     "antfu/no-ts-export-equal": "error",
+    "antfu/no-const-enum": "error",
+    "antfu/named-tuple-spacing": "error",
 
     // off
     "@typescript-eslint/consistent-indexed-object-style": "off",
@@ -130,6 +132,6 @@ module.exports = {
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/triple-slash-reference": "off",
     // handled by unused-imports/no-unused-imports
-    "@typescript-eslint/no-unused-vars": "off"
-  }
+    "@typescript-eslint/no-unused-vars": "off",
+  },
 };
