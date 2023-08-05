@@ -1,6 +1,6 @@
 {
   "name": "@luxass/eslint-config-monorepo",
-  "version": "3.2.2",
+  "version": "3.3.0",
   "private": true,
   "packageManager": "pnpm@8.6.11",
   "author": {
