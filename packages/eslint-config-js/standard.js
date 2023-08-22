@@ -220,7 +220,6 @@ module.exports = {
     }],
     "valid-typeof": ["error", { requireStringLiterals: true }],
     "wrap-iife": ["error", "any", { functionPrototypeMethods: true }],
-    "yield-star-spacing": ["error", "both"],
     "yoda": ["error", "never"],
 
     "import/export": "error",
