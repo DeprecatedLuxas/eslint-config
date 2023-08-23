@@ -14,6 +14,10 @@
     "directory": "packages/eslint-config"
   },
   "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "linting",
     "eslint-config"
   ],
   "main": "index.js",

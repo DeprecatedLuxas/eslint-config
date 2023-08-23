@@ -28,6 +28,25 @@ importers:
         specifier: ^8.42.0
         version: 8.42.0
 
+  packages/eslint-config-auto:
+    dependencies:
+      '@luxass/eslint-config-js':
+        specifier: workspace:*
+        version: link:../eslint-config-js
+      '@luxass/eslint-config-react':
+        specifier: workspace:*
+        version: link:../eslint-config-react
+      '@luxass/eslint-config-ts':
+        specifier: workspace:*
+        version: link:../eslint-config-ts
+      '@luxass/eslint-config-vue':
+        specifier: workspace:*
+        version: link:../eslint-config-vue
+    devDependencies:
+      eslint:
+        specifier: ^8.42.0
+        version: 8.45.0
+
   packages/eslint-config-js:
     dependencies:
       eslint-plugin-antfu:
@@ -183,11 +202,11 @@ packages:
   /@eslint-community/regexpp@4.5.1:
     resolution: {integrity: sha512-Z5ba73P98O1KUYCCJTUeVpja9RcGoMdncZ6T49FCUl2lN38JtCJ+3WgIDBv0AuY4WChU5PmtJmOCTlN6FZTFKQ==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
+    dev: true
 
   /@eslint-community/regexpp@4.6.2:
     resolution: {integrity: sha512-pPTNuaAG3QMH+buKyBIGJs3g/S5y0caxw0ygM3YyE6yJFySwiGGSzA+mM3KJ8QQvzeLh3blwgSonkFjgQdxzMw==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
-    dev: false
 
   /@eslint/eslintrc@2.0.3:
     resolution: {integrity: sha512-+5gy6OQfk+xx3q0d6jGZZC3f3KzAkXc/IanVxd1is/VIIziRqqt3ongQz0FiTUXqTk0c7aDB3OaFuKnuSoJicQ==}
@@ -1141,7 +1160,7 @@ packages:
     hasBin: true
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.45.0)
-      '@eslint-community/regexpp': 4.5.1
+      '@eslint-community/regexpp': 4.6.2
       '@eslint/eslintrc': 2.1.1
       '@eslint/js': 8.44.0
       '@humanwhocodes/config-array': 0.11.10
