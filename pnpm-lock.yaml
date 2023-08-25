@@ -76,6 +76,9 @@ importers:
 
   packages/eslint-config-react:
     dependencies:
+      '@luxass/eslint-config-js':
+        specifier: workspace:*
+        version: link:../eslint-config-js
       '@luxass/eslint-config-ts':
         specifier: workspace:*
         version: link:../eslint-config-ts
@@ -85,6 +88,9 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^4.6.0
         version: 4.6.0(eslint@8.47.0)
+      local-pkg:
+        specifier: ^0.4.3
+        version: 0.4.3
     devDependencies:
       eslint:
         specifier: ^8.47.0
