@@ -14,7 +14,8 @@
     "url": "https://github.com/luxass/eslint-config.git"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "playgrounds/**"
   ],
   "scripts": {
     "lint": "eslint .",
