@@ -2,6 +2,7 @@
 
 > [!IMPORTANT]
 > This config is now deprecated and migrated to use [ESLint Flat Config](https://eslint.org/docs/latest/user-guide/configuring/configuration-files#using-a-shareable-configuration-package) instead. Please use [@luxass/eslint-config](https://github.com/luxass/eslint-config) instead.
+> You can still use this config, but it will not be updated anymore.
 
 
 ## Installation
