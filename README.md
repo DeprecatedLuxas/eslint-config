@@ -9,7 +9,7 @@ If you for some reason still want to use this, you can use versions prior to v4
 ## Installation
 
 ```bash
-npm install --save-dev eslint @luxass/eslint-config3.3.2
+npm install --save-dev eslint @luxass/eslint-config@3.4.0
 ```
 
 The config `@luxass/eslint-config` is just using `@luxass/eslint-config-vue` under the hood.

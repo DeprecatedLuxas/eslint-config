@@ -33,10 +33,10 @@
   "dependencies": {
     "@luxass/eslint-config-js": "workspace:*",
     "@luxass/eslint-config-ts": "workspace:*",
-    "eslint-plugin-vue": "^9.17.0",
+    "eslint-plugin-vue": "^9.18.1",
     "local-pkg": "^0.5.0"
   },
   "devDependencies": {
-    "eslint": "^8.48.0"
+    "eslint": "^8.54.0"
   }
 }
