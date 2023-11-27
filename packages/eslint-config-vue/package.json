@@ -1,6 +1,6 @@
 {
   "name": "@luxass/eslint-config-vue",
-  "version": "3.3.2",
+  "version": "3.4.0",
   "description": "luxass' ESLint config",
   "author": {
     "name": "Lucas Nørgård",
