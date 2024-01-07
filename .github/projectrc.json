@@ -1,10 +1,4 @@
 {
   "$schema": "https://projectrc.luxass.dev/schema",
-  "extras": {
-    "npm": true,
-    "deprecated": {
-      "message": "This project is deprecated. Please use @luxass/eslint-config instead.",
-      "replacement": "@luxass/eslint-config"
-    }
-  }
+  "ignore": true
 }
