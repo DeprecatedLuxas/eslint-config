@@ -1,4 +1,8 @@
 {
-  "$schema": "https://projectrc.luxass.dev/schema",
-  "ignore": true
+  "$schema": "https://projectrc.luxass.dev/schema.json",
+  "readme": true,
+  "deprecated": {
+    "message": "eslint-config-legacy is deprecated",
+    "replacement": "eslint-config"
+  }
 }
