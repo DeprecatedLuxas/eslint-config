@@ -37,6 +37,6 @@
     "local-pkg": "^0.5.0"
   },
   "devDependencies": {
-    "eslint": "^8.54.0"
+    "eslint": "^9.0.0"
   }
 }
