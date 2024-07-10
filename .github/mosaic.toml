@@ -12,4 +12,4 @@ enabled = true
 
 [deprecated]
 message = "eslint-config-legacy is deprecated"
-"replacement": "eslint-config"
+replacement = "eslint-config"
