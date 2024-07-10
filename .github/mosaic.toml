@@ -1,0 +1,15 @@
+# this file is used to generate a list of projects that
+# should be showcases on my website.
+
+# read more here: https://mosaic.luxass.dev
+# schema can be found here: https://mosaic.luxass.dev/json-schema.json
+
+[project]
+name = "eslint-config-legacy"
+
+[readme]
+enabled = true
+
+[deprecated]
+message = "eslint-config-legacy is deprecated"
+"replacement": "eslint-config"
